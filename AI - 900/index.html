@@ -760,7 +760,9 @@
         const timeValueEl = document.getElementById('timeValue');
         const timeTakenTextEl = document.getElementById('timeTakenText');
         const finalTimeValueEl = document.getElementById('finalTimeValue');
+        const finalScoreTextEl = document.getElementById('finalScoreText');
         
+            
 
         // Estado del Cuestionario
         let currentQuestionIndex = 0;
@@ -997,14 +999,14 @@
         }
 
         function showResults() {
-            stopTimer(); // Stop the timer when quiz ends
+            stopTimer(); 
             quizArea.classList.add('hidden');
             resultsArea.classList.remove('hidden');
-            finalScoreTextEl.textContent = `${score} / ${currentQuizQuestions.length}`; 
-            finalTimeValueEl.textContent = formatTime(elapsedTime); // Display final time
+            finalScoreTextEl.textContent = `${score} / ${currentQuizQuestions.length}`;  // Variable CORRECTA
+            finalTimeValueEl.textContent = formatTime(elapsedTime);  // Variable CORRECTA
             
             let message = "";
-            const percentage = (score / currentQuizQuestions.length) * 100;
+
             if (percentage === 100) {
                 message = "¡Extraordinario! ¡Lo has bordado! ¡Puntuación perfecta!";
             } else if (percentage >= 80) {
